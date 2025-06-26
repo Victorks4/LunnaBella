@@ -8,7 +8,7 @@ const Index = () => {
           <h1 className="font-playfair text-6xl font-bold mb-6 text-warm">
             Elegância Atemporal
           </h1>
-          <div className="w-24 h-1 bg-gold mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-soft-pink mx-auto mb-6"></div>
           <p className="text-xl text-warm mb-8 font-inter">
             Seu catálogo de moda feminina está sendo preparado com todo carinho e elegância que você merece.
           </p>

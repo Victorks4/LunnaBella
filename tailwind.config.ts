@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,12 +62,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Cores personalizadas para o catálogo de roupas
+				// Cores personalizadas para o catálogo de roupas - alterando gold para rosa suave
 				cream: '#F5F5DC',
 				sand: '#D2B48C',
 				warm: '#8B7355',
-				gold: '#DAA520',
 				rose: '#F4C2C2',
+				'soft-pink': '#E8B4CB',
 				sage: '#9CAF88'
 			},
 			borderRadius: {
