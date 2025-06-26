@@ -6,7 +6,7 @@
     <title>Elegância Atemporal - Moda Feminina</title>
     <meta name="description" content="Catálogo de roupas para mulheres modernas e elegantes. Moda atemporal e modesta." />
     <meta name="author" content="Elegância Atemporal" />
-
+    <link rel="stylesheet" href="style.css">
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap">
     
@@ -17,92 +17,14 @@
     <meta property="og:description" content="Catálogo de roupas para mulheres modernas e elegantes" />
     <meta property="og:type" content="website" />
 
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: #FEFEFE;
-        color: #2C2C2C;
-      }
-      
-      .playfair {
-        font-family: 'Playfair Display', serif;
-      }
-      
-      .hero-section {
-        background: linear-gradient(135deg, #F5F5DC 0%, #E6E6DC 100%);
-        min-height: 70vh;
-      }
-      
-      .category-card {
-        transition: all 0.3s ease;
-        border: none;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      }
-      
-      .category-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-      }
-      
-      .product-card {
-        transition: all 0.3s ease;
-        border: 1px solid #E5E5E5;
-      }
-      
-      .product-card:hover {
-        border-color: #E8B4CB;
-        transform: translateY(-3px);
-      }
-      
-      .btn-soft-pink {
-        background-color: #E8B4CB;
-        border-color: #E8B4CB;
-        color: white;
-        transition: all 0.3s ease;
-      }
-      
-      .btn-soft-pink:hover {
-        background-color: #D899B8;
-        border-color: #D899B8;
-        color: white;
-      }
-      
-      .section-divider {
-        height: 1px;
-        background: linear-gradient(90deg, transparent, #E8B4CB, transparent);
-        margin: 4rem 0;
-      }
-      
-      .fade-in {
-        animation: fadeInUp 0.8s ease-out;
-      }
-      
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      
-      .text-soft-pink {
-        color: #E8B4CB;
-      }
-      
-      .bg-soft-pink {
-        background-color: #E8B4CB;
-      }
-    </style>
+    
   </head>
 
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
       <div class="container">
-        <a class="navbar-brand playfair fw-bold fs-3 text-soft-pink" href="#">Elegância</a>
+        <a class="navbar-brand title-font fw-bold fs-3 text-accent brand-left" href="#">Luna Bella</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -129,24 +51,24 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section d-flex align-items-center">
+    <section id="home" class="hero d-flex align-items-center">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6">
-            <h1 class="playfair display-4 fw-bold mb-4 fade-in">
+            <h1 class="title-font display-4 fw-bold mb-4 fade">
               Elegância que Transcende o Tempo
             </h1>
-            <p class="lead mb-4 fade-in" style="animation-delay: 0.2s;">
+            <p class="lead mb-4 fade" style="animation-delay: 0.2s;">
               Descubra nossa coleção cuidadosamente selecionada para mulheres modernas que valorizam 
               sofisticação, qualidade e estilo atemporal.
             </p>
-            <button class="btn btn-soft-pink btn-lg px-4 py-2 fade-in" style="animation-delay: 0.4s;">
+            <button class="btn btn-primary btn-lg px-4 py-2 fade" style="animation-delay: 0.4s;">
               Explorar Coleção
             </button>
           </div>
           <div class="col-lg-6 text-center">
-            <img src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=500&h=600&fit=crop" 
-                 alt="Mulher elegante" class="img-fluid rounded shadow-lg fade-in" style="animation-delay: 0.6s;">
+            <img src="img2.webp" 
+                 alt="Mulher elegante" class="img-fluid rounded shadow-lg fade" style="animation-delay: 0.6s;">
           </div>
         </div>
       </div>
@@ -156,17 +78,17 @@
     <section class="py-5">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="playfair display-5 fw-bold mb-3">Nossas Coleções</h2>
+          <h2 class="title-font display-5 fw-bold mb-3">Nossas Coleções</h2>
           <p class="lead text-muted">Cada peça conta uma história de elegância e modernidade</p>
         </div>
         
         <div class="row g-4">
           <div class="col-md-4">
-            <div class="card category-card h-100">
-              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop" 
+            <div class="card category h-100">
+              <img src="img1.png" 
                    class="card-img-top" alt="Elegância Atemporal">
               <div class="card-body text-center">
-                <h5 class="card-title playfair fw-bold">Elegância Atemporal</h5>
+                <h5 class="card-title title-font fw-bold">Elegância Atemporal</h5>
                 <p class="card-text">Peças clássicas que nunca saem de moda. Para mulheres sofisticadas que valorizam qualidade e estilo duradouro.</p>
                 <button class="btn btn-outline-secondary" style="border-color: #E8B4CB; color: #E8B4CB;">Ver Coleção</button>
               </div>
@@ -174,11 +96,11 @@
           </div>
           
           <div class="col-md-4">
-            <div class="card category-card h-100">
+            <div class="card category h-100">
               <img src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop" 
                    class="card-img-top" alt="Moda Jovem">
               <div class="card-body text-center">
-                <h5 class="card-title playfair fw-bold">Estilo Jovem</h5>
+                <h5 class="card-title title-font fw-bold">Estilo Jovem</h5>
                 <p class="card-text">Tendências atuais com toque de elegância. Perfeito para mulheres jovens que buscam se expressar com classe.</p>
                 <button class="btn btn-outline-secondary" style="border-color: #E8B4CB; color: #E8B4CB;">Ver Coleção</button>
               </div>
@@ -186,11 +108,11 @@
           </div>
           
           <div class="col-md-4">
-            <div class="card category-card h-100">
+            <div class="card category h-100">
               <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop" 
                    class="card-img-top" alt="Moda Modesta">
               <div class="card-body text-center">
-                <h5 class="card-title playfair fw-bold">Moda Modesta</h5>
+                <h5 class="card-title title-font fw-bold">Moda Modesta</h5>
                 <p class="card-text">Elegância e modéstia em harmonia. Coleção especial para mulheres cristãs que não abrem mão do estilo.</p>
                 <button class="btn btn-outline-secondary" style="border-color: #E8B4CB; color: #E8B4CB;">Ver Coleção</button>
               </div>
@@ -200,74 +122,74 @@
       </div>
     </section>
 
-    <div class="section-divider"></div>
+    <div class="divider"></div>
 
     <!-- Seção Atemporais -->
     <section id="atemporais" class="py-5 bg-light">
       <div class="container">
         <div class="row align-items-center mb-5">
           <div class="col-lg-6">
-            <h2 class="playfair display-5 fw-bold mb-3">Coleção Atemporal</h2>
+            <h2 class="title-font display-5 fw-bold mb-3">Coleção Atemporal</h2>
             <p class="lead">Investimentos em peças que atravessam décadas mantendo sua relevância e sofisticação.</p>
           </div>
         </div>
         
         <div class="row g-4">
           <div class="col-lg-3 col-md-6">
-            <div class="card product-card">
+            <div class="card product">
               <img src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=400&fit=crop" 
                    class="card-img-top" alt="Blazer Clássico">
               <div class="card-body">
                 <h6 class="card-title fw-bold">Blazer Clássico</h6>
                 <p class="card-text text-muted small">Corte impecável em lã premium</p>
                 <div class="d-flex justify-content-between align-items-center">
-                  <span class="fw-bold text-soft-pink">R$ 289,90</span>
-                  <button class="btn btn-sm btn-soft-pink">Ver Detalhes</button>
+                  <span class="fw-bold text-accent">R$ 289,90</span>
+                  <button class="btn btn-sm btn-primary">Ver Detalhes</button>
                 </div>
               </div>
             </div>
           </div>
           
           <div class="col-lg-3 col-md-6">
-            <div class="card product-card">
+            <div class="card product">
               <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=400&fit=crop" 
                    class="card-img-top" alt="Vestido Midi">
               <div class="card-body">
                 <h6 class="card-title fw-bold">Vestido Midi Elegante</h6>
                 <p class="card-text text-muted small">Modelagem que valoriza a silhueta</p>
                 <div class="d-flex justify-content-between align-items-center">
-                  <span class="fw-bold text-soft-pink">R$ 199,90</span>
-                  <button class="btn btn-sm btn-soft-pink">Ver Detalhes</button>
+                  <span class="fw-bold text-accent">R$ 199,90</span>
+                  <button class="btn btn-sm btn-primary">Ver Detalhes</button>
                 </div>
               </div>
             </div>
           </div>
           
           <div class="col-lg-3 col-md-6">
-            <div class="card product-card">
+            <div class="card product">
               <img src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=300&h=400&fit=crop" 
                    class="card-img-top" alt="Camisa Seda">
               <div class="card-body">
                 <h6 class="card-title fw-bold">Camisa em Seda</h6>
                 <p class="card-text text-muted small">Versatilidade e sofisticação</p>
                 <div class="d-flex justify-content-between align-items-center">
-                  <span class="fw-bold text-soft-pink">R$ 159,90</span>
-                  <button class="btn btn-sm btn-soft-pink">Ver Detalhes</button>
+                  <span class="fw-bold text-accent">R$ 159,90</span>
+                  <button class="btn btn-sm btn-primary">Ver Detalhes</button>
                 </div>
               </div>
             </div>
           </div>
           
           <div class="col-lg-3 col-md-6">
-            <div class="card product-card">
+            <div class="card product">
               <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=300&h=400&fit=crop" 
                    class="card-img-top" alt="Calça Palazzo">
               <div class="card-body">
                 <h6 class="card-title fw-bold">Calça Palazzo</h6>
                 <p class="card-text text-muted small">Conforto e elegância em uma peça</p>
                 <div class="d-flex justify-content-between align-items-center">
-                  <span class="fw-bold text-soft-pink">R$ 179,90</span>
-                  <button class="btn btn-sm btn-soft-pink">Ver Detalhes</button>
+                  <span class="fw-bold text-accent">R$ 179,90</span>
+                  <button class="btn btn-sm btn-primary">Ver Detalhes</button>
                 </div>
               </div>
             </div>
@@ -280,51 +202,51 @@
     <section id="jovem" class="py-5">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="playfair display-5 fw-bold mb-3">Estilo Jovem</h2>
+          <h2 class="title-font display-5 fw-bold mb-3">Estilo Jovem</h2>
           <p class="lead text-muted">Tendências atuais com a elegância que você merece</p>
         </div>
         
         <div class="row g-4">
           <div class="col-lg-4 col-md-6">
-            <div class="card product-card">
+            <div class="card product">
               <img src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=350&h=450&fit=crop" 
                    class="card-img-top" alt="Top Cropped">
               <div class="card-body">
                 <h6 class="card-title fw-bold">Top Cropped Elegante</h6>
                 <p class="card-text text-muted small">Moderno e sofisticado</p>
                 <div class="d-flex justify-content-between align-items-center">
-                  <span class="fw-bold text-soft-pink">R$ 89,90</span>
-                  <button class="btn btn-sm btn-soft-pink">Ver Detalhes</button>
+                  <span class="fw-bold text-accent">R$ 89,90</span>
+                  <button class="btn btn-sm btn-primary">Ver Detalhes</button>
                 </div>
               </div>
             </div>
           </div>
           
           <div class="col-lg-4 col-md-6">
-            <div class="card product-card">
+            <div class="card product">
               <img src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=350&h=450&fit=crop" 
                    class="card-img-top" alt="Saia Plissada">
               <div class="card-body">
                 <h6 class="card-title fw-bold">Saia Plissada</h6>
                 <p class="card-text text-muted small">Movimento e feminilidade</p>
                 <div class="d-flex justify-content-between align-items-center">
-                  <span class="fw-bold text-soft-pink">R$ 129,90</span>
-                  <button class="btn btn-sm btn-soft-pink">Ver Detalhes</button>
+                  <span class="fw-bold text-accent">R$ 129,90</span>
+                  <button class="btn btn-sm btn-primary">Ver Detalhes</button>
                 </div>
               </div>
             </div>
           </div>
           
           <div class="col-lg-4 col-md-6">
-            <div class="card product-card">
+            <div class="card product">
               <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=350&h=450&fit=crop" 
                    class="card-img-top" alt="Macacão">
               <div class="card-body">
                 <h6 class="card-title fw-bold">Macacão Contemporâneo</h6>
                 <p class="card-text text-muted small">Praticidade com muito estilo</p>
                 <div class="d-flex justify-content-between align-items-center">
-                  <span class="fw-bold text-soft-pink">R$ 219,90</span>
-                  <button class="btn btn-sm btn-soft-pink">Ver Detalhes</button>
+                  <span class="fw-bold text-accent">R$ 219,90</span>
+                  <button class="btn btn-sm btn-primary">Ver Detalhes</button>
                 </div>
               </div>
             </div>
@@ -333,57 +255,57 @@
       </div>
     </section>
 
-    <div class="section-divider"></div>
+    <div class="divider"></div>
 
     <!-- Seção Moda Modesta -->
     <section id="modesta" class="py-5 bg-light">
       <div class="container">
         <div class="text-center mb-5">
-          <h2 class="playfair display-5 fw-bold mb-3">Moda Modesta</h2>
+          <h2 class="title-font display-5 fw-bold mb-3">Moda Modesta</h2>
           <p class="lead text-muted">Elegância e modéstia em perfeita harmonia</p>
         </div>
         
         <div class="row g-4">
           <div class="col-lg-4 col-md-6">
-            <div class="card product-card">
+            <div class="card product">
               <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=350&h=450&fit=crop" 
                    class="card-img-top" alt="Vestido Longo">
               <div class="card-body">
                 <h6 class="card-title fw-bold">Vestido Longo Fluido</h6>
                 <p class="card-text text-muted small">Elegância e cobertura adequada</p>
                 <div class="d-flex justify-content-between align-items-center">
-                  <span class="fw-bold text-soft-pink">R$ 189,90</span>
-                  <button class="btn btn-sm btn-soft-pink">Ver Detalhes</button>
+                  <span class="fw-bold text-accent">R$ 189,90</span>
+                  <button class="btn btn-sm btn-primary">Ver Detalhes</button>
                 </div>
               </div>
             </div>
           </div>
           
           <div class="col-lg-4 col-md-6">
-            <div class="card product-card">
+            <div class="card product">
               <img src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=350&h=450&fit=crop" 
                    class="card-img-top" alt="Blusa Mangas Longas">
               <div class="card-body">
                 <h6 class="card-title fw-bold">Blusa Manga Longa</h6>
                 <p class="card-text text-muted small">Sofisticação e conforto</p>
                 <div class="d-flex justify-content-between align-items-center">
-                  <span class="fw-bold text-soft-pink">R$ 119,90</span>
-                  <button class="btn btn-sm btn-soft-pink">Ver Detalhes</button>
+                  <span class="fw-bold text-accent">R$ 119,90</span>
+                  <button class="btn btn-sm btn-primary">Ver Detalhes</button>
                 </div>
               </div>
             </div>
           </div>
           
           <div class="col-lg-4 col-md-6">
-            <div class="card product-card">
+            <div class="card product">
               <img src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=350&h=450&fit=crop" 
                    class="card-img-top" alt="Saia Midi">
               <div class="card-body">
                 <h6 class="card-title fw-bold">Saia Midi Clássica</h6>
                 <p class="card-text text-muted small">Versatilidade e elegância</p>
                 <div class="d-flex justify-content-between align-items-center">
-                  <span class="fw-bold text-soft-pink">R$ 149,90</span>
-                  <button class="btn btn-sm btn-soft-pink">Ver Detalhes</button>
+                  <span class="fw-bold text-accent">R$ 149,90</span>
+                  <button class="btn btn-sm btn-primary">Ver Detalhes</button>
                 </div>
               </div>
             </div>
@@ -397,7 +319,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <h2 class="playfair display-5 fw-bold mb-4">Entre em Contato</h2>
+            <h2 class="title-font display-5 fw-bold mb-4">Entre em Contato</h2>
             <p class="lead mb-4">
               Pronta para descobrir seu novo estilo? Entre em contato conosco e 
               receba atendimento personalizado para encontrar as peças perfeitas.
@@ -429,7 +351,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h5 class="playfair fw-bold mb-3">Elegância Atemporal</h5>
+            <h5 class="title-font fw-bold mb-3">Elegância Atemporal</h5>
             <p class="small mb-0">Moda feminina que transcende o tempo e celebra a elegância moderna.</p>
           </div>
           <div class="col-md-6 text-md-end">

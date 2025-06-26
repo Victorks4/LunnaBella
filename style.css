@@ -1,0 +1,87 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FEFEFE;
+    color: #2C2C2C;
+    
+}
+
+.title-font {
+    font-family: 'Playfair Display', serif;
+}
+
+.hero {
+    background: linear-gradient(135deg, #D8BFD8 0%, #E6E6DC 100%);
+    min-height: 70vh;
+}
+
+.category {
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.product {
+    transition: all 0.3s ease;
+    border: 1px solid #E5E5E5;
+}
+
+.product:hover {
+    border-color: #E8B4CB;
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    background-color: #E8B4CB;
+    border-color: #E8B4CB;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #D899B8;
+    border-color: #D899B8;
+    color: white;
+}
+
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #E8B4CB, transparent);
+    margin: 4rem 0;
+}
+
+.fade {
+    animation: fadeInUp 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+.text-accent {
+    color: #E8B4CB;
+}
+
+.bg-accent {
+    background-color: #E8B4CB;
+}
+.nav-item{
+    position: relative;
+    left: 230px;
+}
+
+.brand-left {
+    margin-left: -250px;
+}
