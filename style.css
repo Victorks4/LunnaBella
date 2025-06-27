@@ -6,11 +6,11 @@ body {
 }
 
 .title-font {
-    font-family: 'Playfair Display', serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .hero {
-    background: linear-gradient(135deg, #D8BFD8 0%, #E6E6DC 100%);
+    background: linear-gradient(135deg, #F7DEE8 0%, #E0D1CC 100%);
     min-height: 70vh;
 }
 
