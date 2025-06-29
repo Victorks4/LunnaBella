@@ -14,8 +14,9 @@ body {
 }
 
 .hero {
-    background: linear-gradient(135deg, #F7DEE8 0%, #E0D1CC 100%);
-    min-height: 70vh;
+    min-height: 67vh;
+    background: url('img/banner-hero.png') no-repeat center center;
+    background-size: cover;
 }
 
 .category {
