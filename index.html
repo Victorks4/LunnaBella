@@ -27,6 +27,21 @@
         <a href="index.html">
           <img src="logo-luna-bella.png" alt="logo Luna Bella" class="brand-left" style="height: 66px; object-fit: contain;">
         </a>
+        
+        <!-- Campo de Busca -->
+        <div class="search-container">
+          <div class="input-group">
+            <input type="text" class="search-input" id="searchInput" placeholder="Buscar produtos..." aria-label="Buscar produtos">
+            <button class="search-btn" type="button" id="searchBtn">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10" cy="10" r="7" stroke="#222" stroke-width="2"/>
+                <path d="M16 16L20 20" stroke="#222" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+          <div class="search-results" id="searchResults"></div>
+        </div>
+        
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -81,7 +96,7 @@
           
           <div class="col-md-4">
             <div class="card category h-100">
-              <img src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop" 
+              <img src="imgestilojovem.png" 
                    class="card-img-top" alt="Moda Jovem">
               <div class="card-body text-center">
                 <h5 class="card-title title-font fw-bold">Estilo Jovem</h5>
@@ -93,7 +108,7 @@
           
           <div class="col-md-4">
             <div class="card category h-100">
-              <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=300&fit=crop" 
+              <img src="imgmodesta.webp" 
                    class="card-img-top" alt="Moda Modesta">
               <div class="card-body text-center">
                 <h5 class="card-title title-font fw-bold">Moda Modesta</h5>
@@ -120,7 +135,7 @@
         
         <div class="row g-4">
           <div class="col-lg-3 col-md-6">
-            <div class="card product">
+            <div class="card product" id="produto-blazer-classico" data-categoria="atemporal" data-nome="Blazer Clássico" data-preco="289.90">
               <img src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=400&fit=crop" 
                    class="card-img-top" alt="Blazer Clássico">
               <div class="card-body">
@@ -135,7 +150,7 @@
           </div>
           
           <div class="col-lg-3 col-md-6">
-            <div class="card product">
+            <div class="card product" id="produto-vestido-midi" data-categoria="atemporal" data-nome="Vestido Midi Elegante" data-preco="199.90">
               <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=400&fit=crop" 
                    class="card-img-top" alt="Vestido Midi">
               <div class="card-body">
@@ -150,7 +165,7 @@
           </div>
           
           <div class="col-lg-3 col-md-6">
-            <div class="card product">
+            <div class="card product" id="produto-camisa-seda" data-categoria="atemporal" data-nome="Camisa em Seda" data-preco="159.90">
               <img src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=300&h=400&fit=crop" 
                    class="card-img-top" alt="Camisa Seda">
               <div class="card-body">
@@ -165,7 +180,7 @@
           </div>
           
           <div class="col-lg-3 col-md-6">
-            <div class="card product">
+            <div class="card product" id="produto-calca-palazzo" data-categoria="atemporal" data-nome="Calça Palazzo" data-preco="179.90">
               <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=300&h=400&fit=crop" 
                    class="card-img-top" alt="Calça Palazzo">
               <div class="card-body">
@@ -192,7 +207,7 @@
         
         <div class="row g-4">
           <div class="col-lg-4 col-md-6">
-            <div class="card product">
+            <div class="card product" id="produto-top-cropped" data-categoria="jovem" data-nome="Top Cropped Elegante" data-preco="89.90">
               <img src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=350&h=450&fit=crop" 
                    class="card-img-top" alt="Top Cropped">
               <div class="card-body">
@@ -207,7 +222,7 @@
           </div>
           
           <div class="col-lg-4 col-md-6">
-            <div class="card product">
+            <div class="card product" id="produto-saia-plissada" data-categoria="jovem" data-nome="Saia Plissada" data-preco="129.90">
               <img src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=350&h=450&fit=crop" 
                    class="card-img-top" alt="Saia Plissada">
               <div class="card-body">
@@ -222,7 +237,7 @@
           </div>
           
           <div class="col-lg-4 col-md-6">
-            <div class="card product">
+            <div class="card product" id="produto-macacao-contemporaneo" data-categoria="jovem" data-nome="Macacão Contemporâneo" data-preco="219.90">
               <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=350&h=450&fit=crop" 
                    class="card-img-top" alt="Macacão">
               <div class="card-body">
@@ -251,7 +266,7 @@
         
         <div class="row g-4">
           <div class="col-lg-4 col-md-6">
-            <div class="card product">
+            <div class="card product" id="produto-vestido-longo" data-categoria="modesta" data-nome="Vestido Longo Fluido" data-preco="189.90">
               <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=350&h=450&fit=crop" 
                    class="card-img-top" alt="Vestido Longo">
               <div class="card-body">
@@ -266,7 +281,7 @@
           </div>
           
           <div class="col-lg-4 col-md-6">
-            <div class="card product">
+            <div class="card product" id="produto-blusa-manga-longa" data-categoria="modesta" data-nome="Blusa Manga Longa" data-preco="119.90">
               <img src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=350&h=450&fit=crop" 
                    class="card-img-top" alt="Blusa Mangas Longas">
               <div class="card-body">
@@ -281,7 +296,7 @@
           </div>
           
           <div class="col-lg-4 col-md-6">
-            <div class="card product">
+            <div class="card product" id="produto-saia-midi" data-categoria="modesta" data-nome="Saia Midi Clássica" data-preco="149.90">
               <img src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=350&h=450&fit=crop" 
                    class="card-img-top" alt="Saia Midi">
               <div class="card-body">
@@ -336,7 +351,7 @@
         <div class="row g-5 justify-content-evenly">
           <div class="col-lg-3 col-md-4">
             <img src="logo-footer.png" 
-                 class="mb-3" alt="Logo Luna Bella" style="height: 82px; object-fit: contain;">
+                 class="mb-3 footer-logo" alt="Logo Luna Bella" style="height: 82px; object-fit: contain;">
             <p class="small mb-0">
               Moda feminina que transcende o tempo e celebra a elegância moderna.
             </p>
@@ -381,5 +396,148 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script de Busca -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const searchResults = document.getElementById('searchResults');
+        const products = document.querySelectorAll('.product');
+        
+        // Função para realizar a busca
+        function performSearch() {
+          const searchTerm = searchInput.value.toLowerCase().trim();
+          
+          if (searchTerm === '') {
+            searchResults.innerHTML = '';
+            searchResults.style.display = 'none';
+            showAllProducts();
+            return;
+          }
+          
+          const matchingProducts = [];
+          
+          products.forEach(product => {
+            const productName = product.getAttribute('data-nome').toLowerCase();
+            const productCategory = product.getAttribute('data-categoria');
+            const productPrice = product.getAttribute('data-preco');
+            
+            if (productName.includes(searchTerm) || 
+                productCategory.includes(searchTerm) ||
+                productPrice.includes(searchTerm)) {
+              matchingProducts.push({
+                id: product.id,
+                name: product.getAttribute('data-nome'),
+                category: productCategory,
+                price: productPrice,
+                element: product
+              });
+            }
+          });
+          
+          displaySearchResults(matchingProducts);
+          highlightMatchingProducts(matchingProducts);
+        }
+        
+        // Função para exibir resultados da busca
+        function displaySearchResults(results) {
+          searchResults.innerHTML = '';
+          
+          if (results.length === 0) {
+            searchResults.innerHTML = '<div class="search-result-item no-results">Nenhum produto encontrado</div>';
+          } else {
+            results.forEach(result => {
+              const resultItem = document.createElement('div');
+              resultItem.className = 'search-result-item';
+              resultItem.innerHTML = `
+                <div class="result-content">
+                  <div class="result-name">${result.name}</div>
+                  <div class="result-category">${getCategoryDisplayName(result.category)}</div>
+                  <div class="result-price">R$ ${result.price}</div>
+                </div>
+                <button class="btn btn-sm btn-primary view-product-btn" onclick="scrollToProduct('${result.id}')">
+                  Ver Produto
+                </button>
+              `;
+              searchResults.appendChild(resultItem);
+            });
+          }
+          
+          searchResults.style.display = 'block';
+        }
+        
+        // Função para destacar produtos correspondentes
+        function highlightMatchingProducts(matchingProducts) {
+          products.forEach(product => {
+            product.style.opacity = '0.3';
+            product.style.transform = 'scale(0.95)';
+          });
+          
+          matchingProducts.forEach(result => {
+            result.element.style.opacity = '1';
+            result.element.style.transform = 'scale(1)';
+          });
+        }
+        
+        // Função para mostrar todos os produtos
+        function showAllProducts() {
+          products.forEach(product => {
+            product.style.opacity = '1';
+            product.style.transform = 'scale(1)';
+          });
+        }
+        
+        // Função para obter nome de exibição da categoria
+        function getCategoryDisplayName(category) {
+          const categoryNames = {
+            'atemporal': 'Elegância Atemporal',
+            'jovem': 'Estilo Jovem',
+            'modesta': 'Moda Modesta'
+          };
+          return categoryNames[category] || category;
+        }
+        
+        // Função para rolar até o produto (será definida globalmente)
+        window.scrollToProduct = function(productId) {
+          const product = document.getElementById(productId);
+          if (product) {
+            product.scrollIntoView({ 
+              behavior: 'smooth', 
+              block: 'center' 
+            });
+            
+            // Adicionar destaque temporário
+            product.style.boxShadow = '0 0 20px rgba(232, 180, 203, 0.8)';
+            setTimeout(() => {
+              product.style.boxShadow = '';
+            }, 3000);
+          }
+          
+          // Limpar busca
+          searchInput.value = '';
+          searchResults.style.display = 'none';
+          showAllProducts();
+        };
+        
+        // Event listeners
+        searchInput.addEventListener('input', performSearch);
+        searchBtn.addEventListener('click', performSearch);
+        
+        // Fechar resultados ao clicar fora
+        document.addEventListener('click', function(e) {
+          if (!searchInput.contains(e.target) && !searchResults.contains(e.target) && !searchBtn.contains(e.target)) {
+            searchResults.style.display = 'none';
+          }
+        });
+        
+        // Busca ao pressionar Enter
+        searchInput.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            performSearch();
+          }
+        });
+      });
+    </script>
   </body>
 </html>
