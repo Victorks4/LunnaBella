@@ -20,14 +20,30 @@ body {
 }
 
 .category {
-    transition: all 0.3s ease;
+    min-height: 220px;
     border: none;
+    transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .category:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+#categ-atemporal {
+    background: url('img/categoria-atemporal.png') no-repeat center center;
+    background-size: cover;
+}
+
+#categ-jovem {
+    background: url('img/categoria-estilo-jovem.png') no-repeat center center;
+    background-size: cover;
+}
+
+#categ-modesta {
+    background: url('img/categoria-modesta.png') no-repeat center center;
+    background-size: cover;
 }
 
 .product {
