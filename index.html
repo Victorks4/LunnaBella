@@ -84,19 +84,19 @@
         <div class="row g-4">
           <div class="col-lg-4">
             <div id="categ-atemporal" class="card category d-flex align-items-end justify-content-end p-5">
-              <button onclick="navegarComDelay('atemporais')" class="btn btn-sm btn-dark me-4">Ver Coleção</button>
+              <button class="btn btn-dark me-4 btn-scroll" data-target="#atemporais">Ver Coleção</button>
             </div>
           </div>
 
           <div class="col-md-4">
             <div id="categ-jovem" class="card category d-flex align-items-end justify-content-end p-5">
-              <button onclick="navegarComDelay('jovem')" class="btn btn-sm btn-dark me-4">Ver Coleção</button>
+              <button class="btn btn-dark me-4 btn-scroll" data-target="#jovem">Ver Coleção</button>
             </div>
           </div>
 
           <div class="col-md-4">
             <div id="categ-modesta" class="card category d-flex align-items-end justify-content-end p-5">
-              <button onclick="navegarComDelay('modesta')" class="btn btn-sm btn-dark me-3">Ver Coleção</button>
+              <button class="btn btn-dark me-3 btn-scroll" data-target="#modesta">Ver Coleção</button>
             </div>
           </div>
         </div>
@@ -115,23 +115,21 @@
           </div>
         </div>
 
-        <div class="row g-0 align-items-center" style="position: relative;">
-          <div class="col-auto d-flex flex-column justify-content-center" style="height: 100%; min-width: 60px;">
-            <button class="pos-btn btn">
-              <img src="img/btn-slide.png" alt="Botão voltar">
-            </button>
-          </div>
-          <div class="col px-0">
+        <div class="d-flex align-items-center justify-content-center" style="width: 100%;">
+          <button class="pos-btn btn me-2">
+            <img src="img/btn-slide.png" alt="Botão voltar">
+          </button>
+          <div class="flex-grow-1 px-2">
             <div class="row g-4 justify-content-center" id="atemporais-carousel-cards">
               <div class="col-lg-3 col-md-6 carousel-card">
                 <div class="card product" data-categoria="atemporal" data-nome="Blazer Xadrez com Calça Pantalona" data-preco="189.90">
                   <img src="img/temp1.jpg" class="card-img-top" alt="Blazer Xadrez com Calça Pantalona ">
                   <div class="card-body">
                     <h6 class="card-title fw-bold">Blazer Xadrez com Calça Pantalona</h6>
-                    <p class="card-text text-muted small">Look sofisticado com blazer estruturado e pantalona bege. Perfeito para o dia a dia com estilo.</p>
+                    <p class="card-description card-text text-muted small">Look sofisticado com blazer estruturado e pantalona bege. Perfeito para o dia a dia com estilo.</p>
                     <div class="d-flex justify-content-between align-items-center">
                       <span class="fw-bold text-accent">R$ 189,90</span>
-                      <button class="btn btn-sm btn-primary" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                      <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
                     </div>
                   </div>
                 </div>
@@ -141,10 +139,10 @@
                   <img src="img/temp2.jpg" class="card-img-top" alt="Blazer Preto com Body e Shorts">
                   <div class="card-body">
                     <h6 class="card-title fw-bold">Blazer Preto com Body e Shorts</h6>
-                    <p class="card-text text-muted small">Visual moderno com blazer oversized e shorts de alfaiataria. Ideal para eventos casuais e urbanos.</p>
+                    <p class="card-description card-text text-muted small">Visual moderno com blazer oversized e shorts de alfaiataria. Ideal para eventos casuais e urbanos.</p>
                     <div class="d-flex justify-content-between align-items-center">
                       <span class="fw-bold text-accent">R$ 129,90</span>
-                      <button class="btn btn-sm btn-primary" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                      <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
                     </div>
                   </div>
                 </div>
@@ -154,10 +152,10 @@
                   <img src="img/temp3.jpg" class="card-img-top" alt="Vestido Vinho com Chapéu">
                   <div class="card-body">
                     <h6 class="card-title fw-bold">Vestido Vinho com Chapéu</h6>
-                    <p class="card-text text-muted small">Vestido elegante com babados e laço no decote, ideal para ocasiões especiais. Combine com acessórios marcantes.</p>
+                    <p class="card-description card-text text-muted small">Vestido elegante com babados e laço no decote, ideal para ocasiões especiais. Combine com acessórios marcantes.</p>
                     <div class="d-flex justify-content-between align-items-center">
                       <span class="fw-bold text-accent">R$ 159,90</span>
-                      <button class="btn btn-sm btn-primary" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                      <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
                     </div>
                   </div>
                 </div>
@@ -167,10 +165,10 @@
                   <img src="img/temp4.jpeg" class="card-img-top" alt="Camisa Branca com Calça Bege">
                   <div class="card-body">
                     <h6 class="card-title fw-bold">Camisa Branca com Calça Bege</h6>
-                    <p class="card-text text-muted small">Composição clean e elegante com camisa leve e calça de alfaiataria. Ótimo para um look casual chic.</p>
+                    <p class="card-description card-text text-muted small">Composição clean e elegante com camisa leve e calça de alfaiataria. Ótimo para um look casual chic.</p>
                     <div class="d-flex justify-content-between align-items-center">
                       <span class="fw-bold text-accent">R$ 179,90</span>
-                      <button class="btn btn-sm btn-primary" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                      <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
                     </div>
                   </div>
                 </div>
@@ -181,10 +179,10 @@
                   <img src="img/temp5.png" class="card-img-top" alt="Vestido Tricot Cinza">
                   <div class="card-body">
                     <h6 class="card-title fw-bold">Vestido Tricot Cinza</h6>
-                    <p class="card-text text-muted small">Vestido tricot cinza, confortável e estiloso para dias frios. Combine com meia-calça e acessórios minimalistas.</p>
+                    <p class="card-description card-text text-muted small">Vestido tricot cinza, confortável e estiloso para dias frios. Combine com meia-calça e acessórios minimalistas.</p>
                     <div class="d-flex justify-content-between align-items-center">
                       <span class="fw-bold text-accent">R$ 199,90</span>
-                      <button class="btn btn-sm btn-primary" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                      <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
                     </div>
                   </div>
                 </div>
@@ -194,10 +192,10 @@
                   <img src="img/temp6.png" class="card-img-top" alt="Conjunto Tricot Terracota">
                   <div class="card-body">
                     <h6 class="card-title fw-bold">Conjunto Tricot Terracota</h6>
-                    <p class="card-text text-muted small">Conjunto tricot terracota, perfeito para um visual elegante e moderno em dias amenos.</p>
+                    <p class="card-description card-text text-muted small">Conjunto tricot terracota, perfeito para um visual elegante e moderno em dias amenos.</p>
                     <div class="d-flex justify-content-between align-items-center">
                       <span class="fw-bold text-accent">R$ 219,90</span>
-                      <button class="btn btn-sm btn-primary" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                      <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
                     </div>
                   </div>
                 </div>
@@ -207,10 +205,10 @@
                   <img src="img/temp7.png" class="card-img-top" alt="Conjunto Tricot Caramelo">
                   <div class="card-body">
                     <h6 class="card-title fw-bold">Conjunto Tricot Caramelo</h6>
-                    <p class="card-text text-muted small">Conjunto tricot caramelo, toque macio e caimento perfeito para o inverno. Aposte em acessórios dourados.</p>
+                    <p class="card-description card-text text-muted small">Conjunto tricot caramelo, toque macio e caimento perfeito para o inverno. Aposte em acessórios dourados.</p>
                     <div class="d-flex justify-content-between align-items-center">
                       <span class="fw-bold text-accent">R$ 209,90</span>
-                      <button class="btn btn-sm btn-primary" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                      <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
                     </div>
                   </div>
                 </div>
@@ -220,21 +218,19 @@
                   <img src="img/temp8.png" class="card-img-top" alt="Tricot Gola Alta Bege">
                   <div class="card-body">
                     <h6 class="card-title fw-bold">Tricot Gola Alta Bege</h6>
-                    <p class="card-text text-muted small">Tricot gola alta bege, peça coringa para looks sofisticados e quentinhos. Ideal para o dia a dia.</p>
+                    <p class="card-description card-text text-muted small">Tricot gola alta bege, peça coringa para looks sofisticados e quentinhos. Ideal para o dia a dia.</p>
                     <div class="d-flex justify-content-between align-items-center">
                       <span class="fw-bold text-accent">R$ 189,90</span>
-                      <button class="btn btn-sm btn-primary" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                      <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-auto d-flex flex-column justify-content-center" style="height: 100%; min-width: 60px;">
-            <button class="pre-btn btn">
-              <img src="img/btn-slide.png" alt="Botão próximo">
-            </button>
-          </div>
+          <button class="pre-btn btn ms-2">
+            <img src="img/btn-slide.png" alt="Botão próximo">
+          </button>
         </div>
       </div>
     </section>
@@ -248,46 +244,60 @@
         </div>
         
         <div class="row g-4">
-          <div class="col-lg-4 col-md-6">
+          <div class="col-lg-3 col-md-6">
             <div class="card product" id="Look-Outono-Chic-com-Trench-Coat" data-categoria="jovem" data-nome="Look Outono Chic com Trench Coat" data-preco="149.90">
               <img src="imgjovem/jovem1.png" 
                    class="card-img-top" alt="Look Coat">
               <div class="card-body">
                 <h6 class="card-title fw-bold">Look Outono Chic com Trench Coat</h6>
-                <p class="card-text text-muted small">Look elegante com trench coat bege, chapéu preto e bolsa estruturada. Ideal para dias frios com estilo sofisticado e moderno.</p>
+                <p class="card-description card-text text-muted small">Look elegante com trench coat bege, chapéu preto e bolsa estruturada. Ideal para dias frios com estilo sofisticado e moderno.</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <span class="fw-bold text-accent">R$ 149,90</span>
-                  <button class="btn btn-sm btn-primary" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                  <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
                 </div>
               </div>
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6">
+          <div class="col-lg-3 col-md-6">
             <div class="card product" id="Look-Noite-Urbana" data-categoria="jovem" data-nome="Look Noite Urbana" data-preco="129.90">
               <img src="imgjovem/jovem2.jpg" 
                    class="card-img-top" alt="Look Urbana">
               <div class="card-body">
                 <h6 class="card-title fw-bold">Look Noite Urbana</h6>
-                <p class="card-text text-muted small">Blusa transparente marrom com detalhe em amarração, combinada com calça cargo bege de alfaiataria e sapato chunky preto — moderno e despojado para brilhar à noite.</p>
+                <p class="card-description card-text text-muted small">Blusa transparente marrom com detalhe em amarração, combinada com calça cargo bege de alfaiataria e sapato chunky preto — moderno e despojado para brilhar à noite.</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <span class="fw-bold text-accent">R$ 129,90</span>
-                  <button class="btn btn-sm btn-primary" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                  <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
                 </div>
               </div>
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6">
+          <div class="col-lg-3 col-md-6">
             <div class="card product" id="Street-Style-Atitude" data-categoria="jovem" data-nome="Street Style Atitude" data-preco="219.90">
               <img src="imgjovem/jovem3.jpg" 
                    class="card-img-top" alt="Street Style">
               <div class="card-body">
                 <h6 class="card-title fw-bold">Street Style Atitude</h6>
-                <p class="card-text text-muted small">Jaqueta bomber com patches e top faixa preto combinados com short jeans — look ousado e cheio de personalidade para arrasar onde for.</p>
+                <p class="card-description card-text text-muted small">Jaqueta bomber com patches e top faixa preto combinados com short jeans — look ousado e cheio de personalidade para arrasar onde for.</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <span class="fw-bold text-accent">R$ 219,90</span>
-                  <button class="btn btn-sm btn-primary" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                  <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="card product" id="Look-Urban-Chic" data-categoria="jovem" data-nome="Urban Chic" data-preco="139.90">
+              <img src="imgjovem/jovem4.jpg" class="card-img-top" alt="Urban Chic">
+              <div class="card-body">
+                <h6 class="card-title fw-bold">Urban Chic</h6>
+                <p class="card-description card-text text-muted small">Look urbano com jaqueta jeans, cropped branco e calça preta. Ideal para passeios e encontros casuais.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold text-accent">R$ 139,90</span>
+                  <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
                 </div>
               </div>
             </div>
@@ -309,46 +319,60 @@
         </div>
         
         <div class="row g-4">
-          <div class="col-lg-4 col-md-6">
-            <div class="card product" id="produto-vestido-longo" data-categoria="modesta" data-nome="Vestido Longo Fluido" data-preco="189.90">
-              <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=350&h=450&fit=crop" 
-                   class="card-img-top" alt="Vestido Longo">
+          <div class="col-lg-3 col-md-6">
+            <div class="card product" id="Vestido-Luar-Branco" data-categoria="modesta" data-nome="Vestido Luar Branco" data-preco="189.90">
+              <img src="imgmod/mod1.png" 
+                   class="card-img-top" alt="Vestido Longo Boho">
               <div class="card-body">
-                <h6 class="card-title fw-bold">Vestido Longo Fluido</h6>
-                <p class="card-text text-muted small">Elegância e cobertura adequada</p>
+                <h6 class="card-title fw-bold">Vestido Luar Branco</h6>
+                <p class="card-description card-text text-muted small">Leve, elegante e com toque artesanal, perfeito para dias ensolarados e ocasiões ao ar livre.</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <span class="fw-bold text-accent">R$ 189,90</span>
-                  <button class="btn btn-sm btn-primary" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                  <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
                 </div>
               </div>
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6">
-            <div class="card product" id="produto-blusa-manga-longa" data-categoria="modesta" data-nome="Blusa Manga Longa" data-preco="119.90">
-              <img src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=350&h=450&fit=crop" 
-                   class="card-img-top" alt="Blusa Mangas Longas">
+          <div class="col-lg-3 col-md-6">
+            <div class="card product" id="Vestido-Mostarda-com=Saia-Plissada" data-categoria="modesta" data-nome="Vestido Mostarda com Saia Plissada" data-preco="119.90">
+              <img src="imgmod/mod2.png" 
+                   class="card-img-top" alt="Vestido Mostarda">
               <div class="card-body">
-                <h6 class="card-title fw-bold">Blusa Manga Longa</h6>
-                <p class="card-text text-muted small">Sofisticação e conforto</p>
+                <h6 class="card-title fw-bold">Vestido Mostarda com Saia Plissada</h6>
+                <p class="card-description card-text text-muted small">Charmoso e sofisticado, o modelo valoriza a silhueta e traz um ar retrô moderno.</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <span class="fw-bold text-accent">R$ 119,90</span>
-                  <button class="btn btn-sm btn-primary" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                  <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
                 </div>
               </div>
             </div>
           </div>
           
-          <div class="col-lg-4 col-md-6">
-            <div class="card product" id="produto-saia-midi" data-categoria="modesta" data-nome="Saia Midi Clássica" data-preco="149.90">
-              <img src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=350&h=450&fit=crop" 
-                   class="card-img-top" alt="Saia Midi">
+          <div class="col-lg-3 col-md-6">
+            <div class="card product" id=" Look-Casual-com-Saia-Jeans-Longa" data-categoria="modesta" data-nome=" Look-Casual-com-Saia-Jeans-Longa" data-preco="149.90">
+              <img src="imgmod/mod3.jpg" 
+                   class="card-img-top" alt="Look Casual Saia">
               <div class="card-body">
-                <h6 class="card-title fw-bold">Saia Midi Clássica</h6>
-                <p class="card-text text-muted small">Versatilidade e elegância</p>
+                <h6 class="card-title fw-bold"> Look Casual com Saia Jeans Longa</h6>
+                <p class="card-description card-text text-muted small">Estilo urbano com toque feminino, ideal para um dia a dia prático e cheio de atitude.</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <span class="fw-bold text-accent">R$ 149,90</span>
-                  <button class="btn btn-sm btn-primary" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                  <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="card product" id=" Blusa-Preta-com-Saia-Midi-Bege" data-categoria="modesta" data-nome=" Blusa Preta com Saia Midi Bege" data-preco="159.90">
+              <img src="imgmod/mod4.jpg" class="card-img-top" alt="Blusa e Saia Midi Bege">
+              <div class="card-body">
+                <h6 class="card-title fw-bold"> Blusa Preta com Saia Midi Bege</h6>
+                <p class="card-description card-text text-muted small">Combinação clássica e versátil, perfeita para compor um visual elegante e atemporal.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fw-bold text-accent">R$ 159,90</span>
+                  <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
                 </div>
               </div>
             </div>
@@ -599,29 +623,28 @@
       let animating = false;
 
       function updateCarousel(direction) {
-        // Primeiro, esconde todos os cards que vão sair
+        // Remove animações antigas
+        cards.forEach(card => {
+          card.classList.remove('animating-in', 'animating-out');
+        });
+        // Animação de saída
         cards.forEach((card, idx) => {
-          if (idx >= start && idx < start + visible) {
-            // Não mostra ainda, só prepara para animar
-            card.classList.remove('animating-out');
-            card.classList.remove('animating-in');
-            card.style.display = 'none';
-          } else {
-            card.classList.remove('animating-in');
+          if (card.style.display !== 'none' && !(idx >= start && idx < start + visible)) {
             card.classList.add('animating-out');
-            setTimeout(() => { card.style.display = 'none'; }, 400);
           }
         });
-        // Depois de um pequeno delay, mostra os novos cards com animação
+        // Após a animação de saída, mostra os novos cards com animação de entrada
         setTimeout(() => {
           cards.forEach((card, idx) => {
             if (idx >= start && idx < start + visible) {
               card.style.display = '';
               card.classList.add('animating-in');
+            } else {
+              card.style.display = 'none';
             }
           });
           animating = false;
-        }, 400);
+        }, 500);
       }
 
       prevBtn.addEventListener('click', function() {
@@ -632,7 +655,7 @@
         } else {
           start = cards.length - visible;
         }
-        updateCarousel('prev');
+        updateCarousel('right');
       });
 
       nextBtn.addEventListener('click', function() {
@@ -643,7 +666,7 @@
         } else {
           start = 0;
         }
-        updateCarousel('next');
+        updateCarousel('left');
       });
 
       // Inicializa
@@ -655,6 +678,30 @@
         }
       });
     })();
+    </script>
+
+    <!-- Script para alternar a expansão do card -->
+    <script>
+    document.querySelectorAll('.btn-toggle-details').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var card = btn.closest('.card.product');
+        card.classList.toggle('expanded');
+      });
+    });
+    </script>
+
+    <!-- Script para navegação suave -->
+    <script>
+    document.querySelectorAll('.btn-scroll').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = btn.getAttribute('data-target');
+        var el = document.querySelector(target);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
     </script>
   </body>
 </html>
