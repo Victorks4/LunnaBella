@@ -599,19 +599,29 @@
       let animating = false;
 
       function updateCarousel(direction) {
-        // Animação de saída
+        // Primeiro, esconde todos os cards que vão sair
         cards.forEach((card, idx) => {
           if (idx >= start && idx < start + visible) {
+            // Não mostra ainda, só prepara para animar
             card.classList.remove('animating-out');
-            card.classList.add('animating-in');
-            card.style.display = '';
+            card.classList.remove('animating-in');
+            card.style.display = 'none';
           } else {
             card.classList.remove('animating-in');
             card.classList.add('animating-out');
             setTimeout(() => { card.style.display = 'none'; }, 400);
           }
         });
-        setTimeout(() => { animating = false; }, 400);
+        // Depois de um pequeno delay, mostra os novos cards com animação
+        setTimeout(() => {
+          cards.forEach((card, idx) => {
+            if (idx >= start && idx < start + visible) {
+              card.style.display = '';
+              card.classList.add('animating-in');
+            }
+          });
+          animating = false;
+        }, 400);
       }
 
       prevBtn.addEventListener('click', function() {
@@ -637,7 +647,13 @@
       });
 
       // Inicializa
-      updateCarousel();
+      cards.forEach((card, idx) => {
+        if (idx < visible) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
     })();
     </script>
   </body>
