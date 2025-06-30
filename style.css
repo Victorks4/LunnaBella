@@ -69,6 +69,37 @@ body {
     color: white;
 }
 
+.slide-btn-box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pre-btn,
+.pos-btn {
+    width: 4vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.pre-btn img,
+.pos-btn img {
+    width: 100%;
+}
+
+.pos-btn {
+    transform: rotate(180deg);
+}
+
 .divider {
     height: 1px;
     background: linear-gradient(90deg, transparent, #E8B4CB, transparent);
@@ -98,7 +129,7 @@ body {
 }
 
 .text-accent {
-    color: #E8B4CB;
+    color: #D9598A;
 }
 
 .bg-accent {
