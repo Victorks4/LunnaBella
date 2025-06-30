@@ -57,15 +57,15 @@ body {
 }
 
 .btn-primary {
-    background-color: #E8B4CB;
-    border-color: #E8B4CB;
+    background-color: #D5487E;
+    border-color: #D5487E;
     color: white;
     transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-    background-color: #D899B8;
-    border-color: #D899B8;
+    background-color: #b92e67;
+    border-color: #b92e67;
     color: white;
 }
 
@@ -81,19 +81,33 @@ body {
 
 .pre-btn,
 .pos-btn {
-    width: 4vw;
-    height: 100%;
+    width: 48px;
+    height: 48px;
+    min-width: 40px;
+    min-height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     background: none;
     border: none;
     cursor: pointer;
+    position: relative;
+    top: 0;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.pre-btn:hover,
+.pos-btn:hover {
+    background: #f0f0f0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
 .pre-btn img,
 .pos-btn img {
     width: 100%;
+    max-width: 40px;
+    max-height: 40px;
 }
 
 .pos-btn {
@@ -305,4 +319,73 @@ body {
 
 .footer-logo {
     transform: translateY(-2px);
+}
+
+.row.g-0.align-items-center {
+    align-items: center !important;
+    position: relative;
+}
+
+.col-auto.d-flex.flex-column.justify-content-center {
+    z-index: 2;
+    position: static;
+    margin-left: 60px;
+    margin-right: -40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+@media (max-width: 1200px) {
+    .col-auto.d-flex.flex-column.justify-content-center {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+}
+
+.card.product {
+    height: 100%;
+    min-height: 600px;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#atemporais-carousel-cards {
+    min-height: 600px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+
+.carousel-card {
+    transition: opacity 0.4s, transform 0.4s;
+}
+
+.carousel-card.animating-out {
+    opacity: 0;
+    transform: translateX(-40px) scale(0.98);
+    pointer-events: none;
+}
+
+.carousel-card.animating-in {
+    opacity: 1;
+    transform: translateX(40px) scale(1.02);
 }
