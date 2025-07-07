@@ -473,3 +473,17 @@ body {
         max-width: 100%;
     }
 }
+
+.like-icon {
+    color: #D03970;
+    right: 0;
+    margin: 1.2rem;
+    position: absolute;
+    text-shadow: 0 0 2px #E07BA0;
+    transition: transform .3s ease-in, text-shadow .3s ease-in;
+}
+
+.like-icon:hover {
+    transform: scale(1.12);
+    text-shadow: 0 0 3px #E07BA0;
+}

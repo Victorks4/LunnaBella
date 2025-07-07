@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elegância Atemporal - Moda Feminina</title>
+    <meta name="description" content="Catálogo de roupas para mulheres modernas e elegantes. Moda atemporal e modesta." />
+    <meta name="author" content="Elegância Atemporal" />
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <meta property="og:title" content="Elegância Atemporal - Moda Feminina" />
+    <meta property="og:description" content="Catálogo de roupas para mulheres modernas e elegantes" />
+    <meta property="og:type" content="website" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="products-style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="index.html">
+                <img src="logo-luna-bella.png" alt="logo Luna Bella" style="height: 66px; object-fit: contain;">
+            </a>
+            
+            <!-- Campo de Busca -->
+            <div class="search-container">
+                <div class="input-group">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Buscar produtos..." aria-label="Buscar produtos">
+                    <button class="search-btn" type="button" id="searchBtn">
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="7" stroke="#222" stroke-width="2"/>
+                            <path d="M16 16L20 20" stroke="#222" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="search-results" id="searchResults"></div>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium" href="#home">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium" href="#atemporais">Atemporais</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium" href="#jovem">Jovem</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium" href="#modesta">Modesta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium" href="#contato">Contato</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Carrinho -->
+            <div id="cart-icon" style="margin-left: auto; cursor: pointer; z-index: 20; position: relative;">
+                <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/icons/cart3.svg" alt="Carrinho" style="width: 32px; height: 32px;">
+                <span id="cart-count" style="position: absolute; top: -8px; right: -8px; background: #D5487E; color: #fff; border-radius: 50%; font-size: 13px; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center;">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Adicionar painel do carrinho -->
+    <div id="cart-panel" style="display:none; position: fixed; top: 0; right: 0; width: 340px; height: 100vh; background: #fff; box-shadow: -2px 0 16px rgba(0,0,0,0.08); z-index: 9999; padding: 24px 18px 18px 18px; overflow-y: auto;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;">
+            <h5 style="margin: 0;">Meu Carrinho</h5>
+            <button id="close-cart" style="background: none; border: none; font-size: 22px; cursor: pointer;">&times;</button>
+        </div>
+        <div id="cart-items"></div>
+        <div id="cart-empty" style="text-align: center; color: #aaa; margin-top: 40px;">Seu carrinho está vazio.</div>
+    </div>
+
+    <!-- Corpo da Main -->
+    <div class="main-container d-flex gap-3 p-3">
+        <!-- Sidebar -->
+        <div class="sidebar bg-white" id="sidebar">
+            <div class="sidebar-header d-flex justify-content-between align-items-center mb-3 pb-3">
+                <h2 class="d-flex align-items-center gap-1" style="font-size: 1.12rem; font-weight: 600;">
+                    Filtros
+                </h2>
+                <button class="clear-filters btn" onclick="limparFiltros()">Limpar tudo</button>
+            </div>
+
+            <!-- Filtragem por Categoria -->
+            <div class="filter-section mb-3 pb-3">
+                <div class="section-header py-2 d-flex justify-content-between align-items-center">
+                    <span>Categoria</span>
+                    <i class="fa-solid fa-caret-down text-center" style="font-size: 1.4rem;"></i>
+                </div>
+                <div class="expanded hidden py-2" id="category-content">
+                    <div class="checkbox-item d-flex align-items-center mb-2">
+                        <input type="checkbox" id="atemporal" value="atemporal" onchange="aplicarFiltros()">
+                        <label for="atemporal">Atemporal</label>
+                    </div>
+                    <div class="checkbox-item d-flex align-items-center mb-2">
+                        <input type="checkbox" id="jovem" value="jovem" onchange="aplicarFiltros()">
+                        <label for="jovem">Jovem</label>
+                    </div>
+                    <div class="checkbox-item d-flex align-items-center mb-2">
+                        <input type="checkbox" id="modesta" value="modesta" onchange="aplicarFiltros()">
+                        <label for="modesta">Modesta</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filtragem por Material -->
+            <div class="filter-section mb-3 pb-3">
+                <div class="section-header py-2 d-flex justify-content-between align-items-center">
+                    <span>Material</span>
+                    <i class="fa-solid fa-caret-down text-center" style="font-size: 1.4rem;"></i>
+                </div>
+                <div class="expanded hidden py-2" id="material-content">
+                    <div class="checkbox-item d-flex align-items-center mb-2">
+                        <input type="checkbox" id="tricot" value="Tricot" onchange="aplicarFiltros()">
+                        <label for="tricot">Tricot</label>
+                    </div>
+                    <div class="checkbox-item d-flex align-items-center mb-2">
+                        <input type="checkbox" id="algodao" value="Algodão" onchange="aplicarFiltros()">
+                        <label for="algodao">Algodão</label>
+                    </div>
+                    <div class="checkbox-item d-flex align-items-center mb-2">
+                        <input type="checkbox" id="seda" value="Seda" onchange="aplicarFiltros()">
+                        <label for="seda">Seda</label>
+                    </div>
+                    <div class="checkbox-item d-flex align-items-center mb-2">
+                        <input type="checkbox" id="couro" value="Couro" onchange="aplicarFiltros()">
+                        <label for="couro">Couro</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filtragem por faixa de preço -->
+            <div class="filter-section mb-3 pb-3">
+                <div class="section-header py-2 d-flex justify-content-between align-items-center">
+                    <span>Faixa de Preço</span>
+                    <i class="fa-solid fa-caret-down text-center" style="font-size: 1.4rem;"></i>
+                </div>
+                <div class="expanded hidden py-2" id="price-content">
+                    <div class="py-2">
+                        <div class="d-flex justify-content-between mb-2" style="font-size: 0.87rem; color: #5B6D86;">
+                            <span>R$ <span id="min-price">0</span></span>
+                            <span>R$ <span id="max-price">300</span></span>
+                        </div>
+                        <input type="range" class="price-slider" id="faixa-preco" min="0" max="300" value="300" oninput="atualizarFaixaPreco(this.value)" style="accent-color: #DC6A94;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conteúdo da Main -->
+        <div class="main-content bg-white p-4">
+            <div class="main-header d-flex justify-content-between align-items-center pb-3 mb-3">
+                <h1 class="title-font">Moda Feminina</h1>
+            </div>
+
+            <!-- Coleção Atemporal -->
+            <section id="atemporais" class="py-4">
+                <div class="d-flex align-items-center justify-content-center mb-5">
+                    <div class="flex-grow-1 px-3">
+                        <div class="row g-4 justify-content-center" id="atemporais-carousel-cards">
+                            <div class="col-lg-3 col-md-6 carousel-card">
+                                <div class="card product" data-categoria="atemporal" data-material="Algodão" data-nome="Blazer Xadrez com Calça Pantalona" data-preco="189.90">
+                                    <img src="img/temp1.jpg" class="card-img-top" alt="Blazer Xadrez com Calça Pantalona">
+                                    <div class="card-body">
+                                        <h6 class="card-title fw-bold">Blazer Xadrez com Calça Pantalona</h6>
+                                        <p class="card-description card-text text-muted small">Look sofisticado com blazer estruturado e pantalona bege. Perfeito para o dia a dia com estilo.</p>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="fw-bold text-accent">R$ 189,90</span>
+                                            <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                                        </div>
+                                        <button class="btn btn-outline-primary btn-add-cart w-100" style="border-color: #D5487E; color: #D5487E;">Adicionar ao carrinho</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 carousel-card">
+                                <div class="card product" data-categoria="atemporal" data-material="Algodão" data-nome="Blazer Preto com Body e Shorts" data-preco="129.90">
+                                    <img src="img/temp2.jpg" class="card-img-top" alt="Blazer Preto com Body e Shorts">
+                                    <div class="card-body">
+                                        <h6 class="card-title fw-bold">Blazer Preto com Body e Shorts</h6>
+                                        <p class="card-description card-text text-muted small">Visual moderno com blazer oversized e shorts de alfaiataria. Ideal para eventos casuais e urbanos.</p>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="fw-bold text-accent">R$ 129,90</span>
+                                            <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                                        </div>
+                                        <button class="btn btn-outline-primary btn-add-cart w-100" style="border-color: #D5487E; color: #D5487E;">Adicionar ao carrinho</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 carousel-card">
+                                <div class="card product" data-categoria="atemporal" data-material="Seda" data-nome="Vestido Vinho com Chapéu" data-preco="159.90">
+                                    <img src="img/temp3.jpg" class="card-img-top" alt="Vestido Vinho com Chapéu">
+                                    <div class="card-body">
+                                        <h6 class="card-title fw-bold">Vestido Vinho com Chapéu</h6>
+                                        <p class="card-description card-text text-muted small">Vestido elegante com babados e laço no decote, ideal para ocasiões especiais. Combine com acessórios marcantes.</p>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="fw-bold text-accent">R$ 159,90</span>
+                                            <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                                        </div>
+                                        <button class="btn btn-outline-primary btn-add-cart w-100" style="border-color: #D5487E; color: #D5487E;">Adicionar ao carrinho</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 carousel-card">
+                                <div class="card product" data-categoria="atemporal" data-material="Algodão" data-nome="Camisa Branca com Calça Bege" data-preco="179.90">
+                                    <img src="img/temp4.jpeg" class="card-img-top" alt="Camisa Branca com Calça Bege">
+                                    <div class="card-body">
+                                        <h6 class="card-title fw-bold">Camisa Branca com Calça Bege</h6>
+                                        <p class="card-description card-text text-muted small">Composição clean e elegante com camisa leve e calça de alfaiataria. Ótimo para um look casual chic.</p>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="fw-bold text-accent">R$ 179,90</span>
+                                            <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                                        </div>
+                                        <button class="btn btn-outline-primary btn-add-cart w-100" style="border-color: #D5487E; color: #D5487E;">Adicionar ao carrinho</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 carousel-card">
+                                <div class="card product" data-categoria="atemporal" data-material="Tricot" data-nome="Vestido Tricot Cinza" data-preco="199.90">
+                                    <img src="img/temp5.png" class="card-img-top" alt="Vestido Tricot Cinza">
+                                    <div class="card-body">
+                                        <h6 class="card-title fw-bold">Vestido Tricot Cinza</h6>
+                                        <p class="card-description card-text text-muted small">Vestido tricot cinza, confortável e estiloso para dias frios. Combine com meia-calça e acessórios minimalistas.</p>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="fw-bold text-accent">R$ 199,90</span>
+                                            <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                                        </div>
+                                        <button class="btn btn-outline-primary btn-add-cart w-100" style="border-color: #D5487E; color: #D5487E;">Adicionar ao carrinho</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 carousel-card">
+                                <div class="card product" data-categoria="atemporal" data-material="Tricot" data-nome="Conjunto Tricot Terracota" data-preco="219.90">
+                                    <img src="img/temp6.png" class="card-img-top" alt="Conjunto Tricot Terracota">
+                                    <div class="card-body">
+                                        <h6 class="card-title fw-bold">Conjunto Tricot Terracota</h6>
+                                        <p class="card-description card-text text-muted small">Conjunto tricot terracota, perfeito para um visual elegante e moderno em dias amenos.</p>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="fw-bold text-accent">R$ 219,90</span>
+                                            <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                                        </div>
+                                        <button class="btn btn-outline-primary btn-add-cart w-100" style="border-color: #D5487E; color: #D5487E;">Adicionar ao carrinho</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 carousel-card">
+                                <div class="card product" data-categoria="atemporal" data-material="Tricot" data-nome="Conjunto Tricot Caramelo" data-preco="209.90">
+                                    <img src="img/temp7.png" class="card-img-top" alt="Conjunto Tricot Caramelo">
+                                    <div class="card-body">
+                                        <h6 class="card-title fw-bold">Conjunto Tricot Caramelo</h6>
+                                        <p class="card-description card-text text-muted small">Conjunto tricot caramelo, toque macio e caimento perfeito para o inverno. Aposte em acessórios dourados.</p>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="fw-bold text-accent">R$ 209,90</span>
+                                            <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                                        </div>
+                                        <button class="btn btn-outline-primary btn-add-cart w-100" style="border-color: #D5487E; color: #D5487E;">Adicionar ao carrinho</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 carousel-card">
+                                <div class="card product" data-categoria="atemporal" data-material="Tricot" data-nome="Tricot Gola Alta Bege" data-preco="189.90">
+                                    <img src="img/temp8.png" class="card-img-top" alt="Tricot Gola Alta Bege">
+                                    <div class="card-body">
+                                        <h6 class="card-title fw-bold">Tricot Gola Alta Bege</h6>
+                                        <p class="card-description card-text text-muted small">Tricot gola alta bege, peça coringa para looks sofisticados e quentinhos. Ideal para o dia a dia.</p>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="fw-bold text-accent">R$ 189,90</span>
+                                            <button class="btn btn-sm btn-primary btn-toggle-details" style="background-color: #D5487E; border: #D5487E;">Ver Detalhes</button>
+                                        </div>
+                                        <button class="btn btn-outline-primary btn-add-cart w-100" style="border-color: #D5487E; color: #D5487E;">Adicionar ao carrinho</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-5 pb-3 text-white" style="background-color: #262626;">
+        <div class="container">
+            <div class="row g-5 justify-content-evenly">
+                <div class="col-lg-3 col-md-4">
+                    <img src="logo-footer.png" class="mb-3 footer-logo" alt="Logo Luna Bella" style="height: 82px; object-fit: contain;">
+                    <p class="small mb-0">
+                        Moda feminina que transcende o tempo e celebra a elegância moderna.
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h6 class="footer-title fw-bold">Contato</h6>
+                    <div class="divider-footer mb-3" style="width: 120px;"></div>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="email.svg" alt="Email ícone" style="height: 18px; object-fit: contain;">
+                        <span>
+                            <a href="#" class="text-decoration-none text-white ms-2">
+                                lunabella@gmail.com
+                            </a>
+                        </span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="phone.svg" alt="Telefone ícone" style="height: 18px; object-fit: contain;">
+                        <span>
+                            <a href="#" class="text-decoration-none text-white ms-2">
+                                (75) 98374-5626
+                            </a>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h6 class="footer-title fw-bold">Venha Nos Conhecer</h6>
+                    <div class="divider-footer mb-2" style="width: 200px;"></div>
+                    <div class="d-flex align-items-start">
+                        <img src="local.svg" alt="Local ícone" style="height: 19px; object-fit: contain; align-self: center;">
+                        <span class="ms-2">
+                            Av. Getúlio Vargas, 330 - Centro, Feira de Santana - BA, 44001-192
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="divider mt-4 mb-3"></div>
+            <p class="small mb-0 text-md-center">&copy; 2024 Elegância Atemporal. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script de Filtros -->
+    <script>
+        let filteredProducts = [];
+        let maxPrice = 300;
+
+        // Inicialização da página
+        function init() {
+            filteredProducts = Array.from(document.querySelectorAll('.product'));
+            aplicarFiltros();
+        }
+
+        // Atualizar a faixa de preço
+        function atualizarFaixaPreco(value) {
+            maxPrice = parseInt(value);
+            document.getElementById('max-price').textContent = maxPrice;
+            aplicarFiltros();
+        }
+
+        // Função que identifica os filtros selecionadas 
+        function filtroSelecionado() {
+            const categories = [];
+            const materials = [];
+
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                if(checkbox.checked) {
+                    const value = checkbox.value;
+
+                    if(['atemporal', 'jovem', 'modesta'].includes(value)) {
+                        categories.push(value);
+                    } else if(['Tricot', 'Algodão', 'Seda', 'Couro'].includes(value)) {
+                        materials.push(value);
+                    }
+                }
+            });
+
+            return {categories, materials};
+        }
+
+        // Função que aplica os filtros selecionados
+        function aplicarFiltros() {
+            const {categories, materials} = filtroSelecionado();
+            const allProducts = document.querySelectorAll('.product');
+
+            allProducts.forEach(product => {
+                let shouldShow = true;
+
+                // Filtragem por Categoria
+                if(categories.length > 0) {
+                    const productCategory = product.getAttribute('data-categoria');
+
+                    if(!categories.includes(productCategory)) {
+                        shouldShow = false;
+                    }
+                }
+
+                // Filtragem por material
+                if(materials.length > 0) {
+                    const productMaterial = product.getAttribute('data-material');
+
+                    if(!materials.includes(productMaterial)) {
+                        shouldShow = false;
+                    }
+                }
+
+                // Filtragem por preco
+                const productPrice = parseFloat(product.getAttribute('data-preco'));
+
+                if(productPrice > maxPrice) {
+                    shouldShow = false;
+                }
+
+                // Mostrar/esconder produtos
+                const cardContainer = product.closest('.carousel-card');
+
+                if (shouldShow) {
+                    cardContainer.style.display = '';
+                    product.style.opacity = '1';
+                    product.style.transform = 'scale(1)';
+                } else {
+                    cardContainer.style.display = 'none';
+                }
+            });
+        }
+
+        // Função para limpar os filtros
+        function limparFiltros() {
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+
+            maxPrice = 300;
+            document.getElementById('faixa-preco').value = 300;
+            document.getElementById('max-price').textContent = 300;
+            aplicarFiltros();
+        }
+    </script>
+
+    <!-- Script de Busca -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const searchResults = document.getElementById('searchResults');
+        const products = document.querySelectorAll('.product');
+        
+        // Função para realizar a busca
+        function performSearch() {
+          const searchTerm = searchInput.value.toLowerCase().trim();
+          
+          if (searchTerm === '') {
+            searchResults.innerHTML = '';
+            searchResults.style.display = 'none';
+            showAllProducts();
+            return;
+          }
+          
+          const matchingProducts = [];
+          
+          products.forEach(product => {
+            const productName = product.getAttribute('data-nome').toLowerCase();
+            const productCategory = product.getAttribute('data-categoria');
+            const productPrice = product.getAttribute('data-preco');
+            
+            if (productName.includes(searchTerm) || 
+                productCategory.includes(searchTerm) ||
+                productPrice.includes(searchTerm)) {
+              matchingProducts.push({
+                id: product.id,
+                name: product.getAttribute('data-nome'),
+                category: productCategory,
+                price: productPrice,
+                element: product
+              });
+            }
+          });
+          
+          displaySearchResults(matchingProducts);
+          highlightMatchingProducts(matchingProducts);
+        }
+        
+        // Função para exibir resultados da busca
+        function displaySearchResults(results) {
+          searchResults.innerHTML = '';
+          
+          if (results.length === 0) {
+            searchResults.innerHTML = '<div class="search-result-item no-results">Nenhum produto encontrado</div>';
+          } else {
+            results.forEach(result => {
+              const resultItem = document.createElement('div');
+              resultItem.className = 'search-result-item';
+              resultItem.innerHTML = `
+                <div class="result-content">
+                  <div class="result-name">${result.name}</div>
+                  <div class="result-category">${getCategoryDisplayName(result.category)}</div>
+                  <div class="result-price">R$ ${result.price}</div>
+                </div>
+                <button class="btn btn-sm btn-primary view-product-btn" onclick="scrollToProduct('${result.id}')">
+                  Ver Produto
+                </button>
+              `;
+              searchResults.appendChild(resultItem);
+            });
+          }
+          
+          searchResults.style.display = 'block';
+        }
+        
+        // Função para destacar produtos correspondentes
+        function highlightMatchingProducts(matchingProducts) {
+          products.forEach(product => {
+            product.style.opacity = '0.3';
+            product.style.transform = 'scale(0.95)';
+          });
+          
+          matchingProducts.forEach(result => {
+            result.element.style.opacity = '1';
+            result.element.style.transform = 'scale(1)';
+          });
+        }
+        
+        // Função para mostrar todos os produtos
+        function showAllProducts() {
+          products.forEach(product => {
+            product.style.opacity = '1';
+            product.style.transform = 'scale(1)';
+          });
+        }
+        
+        // Função para obter nome de exibição da categoria
+        function getCategoryDisplayName(category) {
+          const categoryNames = {
+            'atemporal': 'Elegância Atemporal',
+            'jovem': 'Estilo Jovem',
+            'modesta': 'Moda Modesta'
+          };
+          return categoryNames[category] || category;
+        }
+        
+        // Função para rolar até o produto (será definida globalmente)
+        window.scrollToProduct = function(productId) {
+          const product = document.getElementById(productId);
+          if (product) {
+            product.scrollIntoView({ 
+              behavior: 'smooth', 
+              block: 'center' 
+            });
+            
+            // Adicionar destaque temporário
+            product.style.boxShadow = '0 0 20px rgba(232, 180, 203, 0.8)';
+            setTimeout(() => {
+              product.style.boxShadow = '';
+            }, 3000);
+          }
+          
+          // Limpar busca
+          searchInput.value = '';
+          searchResults.style.display = 'none';
+          showAllProducts();
+        };
+        
+        // Event listeners
+        searchInput.addEventListener('input', performSearch);
+        searchBtn.addEventListener('click', performSearch);
+        
+        // Fechar resultados ao clicar fora
+        document.addEventListener('click', function(e) {
+          if (!searchInput.contains(e.target) && !searchResults.contains(e.target) && !searchBtn.contains(e.target)) {
+            searchResults.style.display = 'none';
+          }
+        });
+        
+        // Busca ao pressionar Enter
+        searchInput.addEventListener('keypress', function(e) {
+          if (e.key === 'Enter') {
+            performSearch();
+          }
+        });
+      });
+
+      // Função para uma navegação suave no site
+
+    </script>
+
+    <!-- Carrossel simples para a seção Coleção Atemporal -->
+    <script>
+    (function() {
+      const cardsContainer = document.getElementById('atemporais-carousel-cards');
+      const cards = Array.from(cardsContainer.getElementsByClassName('carousel-card'));
+      const prevBtn = document.querySelector('.pos-btn');
+      const nextBtn = document.querySelector('.pre-btn');
+      let start = 0;
+      const visible = 4;
+      let animating = false;
+
+      function updateCarousel(direction) {
+        // Remove animações antigas
+        cards.forEach(card => {
+          card.classList.remove('animating-in', 'animating-out');
+        });
+        // Animação de saída
+        cards.forEach((card, idx) => {
+          if (card.style.display !== 'none' && !(idx >= start && idx < start + visible)) {
+            card.classList.add('animating-out');
+          }
+        });
+        // Após a animação de saída, mostra os novos cards com animação de entrada
+        setTimeout(() => {
+          cards.forEach((card, idx) => {
+            if (idx >= start && idx < start + visible) {
+              card.style.display = '';
+              card.classList.add('animating-in');
+            } else {
+              card.style.display = 'none';
+            }
+          });
+          animating = false;
+        }, 500);
+      }
+
+      prevBtn.addEventListener('click', function() {
+        if (animating) return;
+        animating = true;
+        if (start > 0) {
+          start--;
+        } else {
+          start = cards.length - visible;
+        }
+        updateCarousel('right');
+      });
+
+      nextBtn.addEventListener('click', function() {
+        if (animating) return;
+        animating = true;
+        if (start < cards.length - visible) {
+          start++;
+        } else {
+          start = 0;
+        }
+        updateCarousel('left');
+      });
+
+      // Inicializa
+      cards.forEach((card, idx) => {
+        if (idx < visible) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    })();
+    </script>
+
+    <!-- Script para alternar a expansão do card -->
+    <script>
+    document.querySelectorAll('.btn-toggle-details').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var card = btn.closest('.card.product');
+        card.classList.toggle('expanded');
+      });
+    });
+    </script>
+
+    <!-- Script para navegação suave -->
+    <script>
+    document.querySelectorAll('.btn-scroll').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = btn.getAttribute('data-target');
+        var el = document.querySelector(target);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+    </script>
+
+    <!-- Carrinho de compras -->
+    <script>
+    const cart = [];
+    const cartIcon = document.getElementById('cart-icon');
+    const cartPanel = document.getElementById('cart-panel');
+    const closeCart = document.getElementById('close-cart');
+    const cartItems = document.getElementById('cart-items');
+    const cartCount = document.getElementById('cart-count');
+    const cartEmpty = document.getElementById('cart-empty');
+
+    function updateCart() {
+      cartItems.innerHTML = '';
+      if (cart.length === 0) {
+        cartEmpty.style.display = '';
+        cartCount.textContent = '0';
+        return;
+      }
+      cartEmpty.style.display = 'none';
+      cartCount.textContent = cart.length;
+      cart.forEach((item, i) => {
+        const div = document.createElement('div');
+        div.style.display = 'flex';
+        div.style.alignItems = 'center';
+        div.style.marginBottom = '16px';
+        div.innerHTML = `
+          <img src="${item.img}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 8px; margin-right: 12px;">
+          <div style="flex:1;">
+            <div style="font-weight: 600; font-size: 15px;">${item.nome}</div>
+            <div style="color: #D5487E; font-weight: 500;">R$ ${item.preco}</div>
+          </div>
+          <button class="btn btn-sm btn-outline-danger btn-remove-cart" data-index="${i}" style="margin-left: 8px;">Remover</button>
+        `;
+        cartItems.appendChild(div);
+      });
+      // Adicionar listeners após renderizar
+      setTimeout(() => {
+        cartItems.querySelectorAll('.btn-remove-cart').forEach(btn => {
+          btn.onclick = function() {
+            const idx = parseInt(btn.getAttribute('data-index'));
+            cart.splice(idx, 1);
+            updateCart();
+          };
+        });
+      }, 0);
+    }
+
+    cartIcon.addEventListener('click', () => {
+      cartPanel.style.display = 'block';
+    });
+    closeCart.addEventListener('click', () => {
+      cartPanel.style.display = 'none';
+    });
+    document.querySelectorAll('.btn-add-cart').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const card = btn.closest('.card.product');
+        const nome = card.getAttribute('data-nome');
+        const preco = card.getAttribute('data-preco');
+        const img = card.querySelector('.card-img-top').getAttribute('src');
+        cart.push({ nome, preco, img });
+        updateCart();
+        cartPanel.style.display = 'block';
+      });
+    });
+    updateCart();
+    </script>
+</body>
+</html>
