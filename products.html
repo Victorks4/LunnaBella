@@ -160,10 +160,14 @@
             </div>
         </div>
 
+        <!-- Sidebar dos filtros para Mobile -->
+        <div class="overlay" id="overlay" onclick="fecharSidebar()"></div>
+
         <!-- Conteúdo da Main -->
         <div class="main-content bg-white p-4">
             <div class="main-header d-flex justify-content-between align-items-center pb-3 mb-3">
                 <h1 class="title-font">Moda Feminina</h1>
+                <button class="toggle-sidebar" onclick="toggleSidebar()">Filtros</button>
             </div>
 
             <!-- Coleção Atemporal -->
@@ -355,6 +359,22 @@
         function init() {
             filteredProducts = Array.from(document.querySelectorAll('.product'));
             aplicarFiltros();
+        }
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('active');
+        }
+
+        function fecharSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            
+            sidebar.classList.remove('open');
+            overlay.classList.remove('active');
         }
 
         // Atualizar a faixa de preço
