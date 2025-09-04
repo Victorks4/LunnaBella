@@ -190,19 +190,13 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 ## 👥 Autores
 
-- **Seu Nome** - *Desenvolvimento inicial* - [Seu GitHub](https://github.com/seu-usuario)
+- **Dev Santos** - *Desenvolvimento inicial* - (https://github.com/Victorks4)(https://github.com/Lunabitriz)
 
 ## 🙏 Agradecimentos
 
 - Design inspirado em tendências de moda atemporal
 - Comunidade de desenvolvedores web
 - Fontes e ícones gratuitos utilizados
-
-## 📞 Contato
-
-- **Email**: seu-email@exemplo.com
-- **LinkedIn**: [Seu LinkedIn](https://linkedin.com/in/seu-perfil)
-- **Portfolio**: [Seu Portfolio](https://seu-portfolio.com)
 
 ---
 
